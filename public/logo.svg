@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Explore Differential Equations</title>
+  <desc id="desc">Solution curves flowing through a direction field.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="#0b1620" stroke="#304252"/>
+  <g fill="none" stroke="#476373" stroke-linecap="round" stroke-width="1.4" opacity=".72">
+    <path d="m13 17 5-2M28 16l5 1M44 18l5 3M12 31l5 1M29 31h5M46 31l5-2M12 46l5-2M28 47l5-1M45 45l5 2"/>
+  </g>
+  <path d="M10 44c8-1 10-21 21-22 11-1 12 20 23 21" fill="none" stroke="#54d39b" stroke-linecap="round" stroke-width="4"/>
+  <path d="M12 50c10-13 22-7 29-19 3-5 4-9 6.2-14.8" fill="none" stroke="#ff7e86" stroke-linecap="round" stroke-width="3.5"/>
+  <path d="M50.5 9.5 50 17.5 44.2 15Z" fill="#ff7e86"/>
+  <circle cx="31" cy="22" r="2.6" fill="#f3f7fa"/>
+</svg>
