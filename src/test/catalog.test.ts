@@ -13,8 +13,8 @@ describe("explorer catalog", () => {
   it("keeps the approved two-card order", () => {
     expect(explorers.map(({ id }) => id)).toEqual(expectedIds);
     expect(explorers.map(({ title }) => title)).toEqual([
-      "Scalar ODE Explorer",
-      "Phase Portrait Explorer",
+      "Scalar Differential Equations",
+      "Phase Portrait",
     ]);
   });
 

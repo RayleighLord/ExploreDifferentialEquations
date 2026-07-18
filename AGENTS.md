@@ -9,7 +9,7 @@ Pages repository subpath.
 ## Catalog invariants
 
 - Keep explorer data in the typed catalog in `src/catalog.ts`.
-- Preserve the current card order: Scalar ODE Explorer, then Phase Portrait Explorer.
+- Preserve the current card order: Scalar Differential Equations, then Phase Portrait.
 - Use the canonical destinations already recorded in the catalog. Each complete card is a semantic
   same-tab link to its corresponding visualization.
 - Maintain a formal academic tone suitable for university students.

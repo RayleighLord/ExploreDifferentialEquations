@@ -12,7 +12,7 @@ export interface Explorer {
 export const explorers: readonly Explorer[] = [
   {
     id: "scalar-ode-explorer",
-    title: "Scalar ODE Explorer",
+    title: "Scalar Differential Equations",
     topic: "First-order scalar equations",
     formula: String.raw`y'=f(y,t)`,
     description:
@@ -23,7 +23,7 @@ export const explorers: readonly Explorer[] = [
   },
   {
     id: "phase-portrait-explorer",
-    title: "Phase Portrait Explorer",
+    title: "Phase Portrait",
     topic: "Planar autonomous systems",
     formula: String.raw`x'=f(x,y),\quad y'=g(x,y)`,
     description:

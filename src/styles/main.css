@@ -159,7 +159,7 @@ main,
 }
 
 .academic-intro {
-  max-width: 72rem;
+  max-width: none;
   padding: clamp(4.5rem, 7vw, 6.2rem) 0 clamp(2.6rem, 4vw, 3.6rem);
 }
 
@@ -168,10 +168,10 @@ main,
 }
 
 .academic-intro h1 {
-  max-width: 70rem;
+  max-width: none;
   margin: 0;
   color: var(--text-strong);
-  font-size: clamp(3rem, 5vw, 4.65rem);
+  font-size: clamp(1.9rem, 5.5vw, 4.65rem);
   font-weight: 680;
   letter-spacing: -0.048em;
   line-height: 1;
@@ -529,10 +529,6 @@ main,
     padding: 4.5rem 0 4.1rem;
   }
 
-  .academic-intro h1 {
-    font-size: clamp(2.9rem, 14vw, 4.7rem);
-  }
-
   .collection {
     padding: 0 0 5.5rem;
   }
@@ -561,10 +557,6 @@ main,
 
   .academic-intro {
     padding-top: 3.8rem;
-  }
-
-  .academic-intro h1 {
-    font-size: clamp(2.65rem, 13.5vw, 3.55rem);
   }
 
   .card-meta {
