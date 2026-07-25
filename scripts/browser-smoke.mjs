@@ -15,6 +15,10 @@ const expectedExplorers = [
     id: "phase-portrait-explorer",
     url: "https://rayleighlord.github.io/PhasePortraitVisualizer/",
   },
+  {
+    id: "fourier-series-explorer",
+    url: "https://rayleighlord.github.io/FourierSeries/",
+  },
 ];
 
 const host = "127.0.0.1";
@@ -129,7 +133,7 @@ async function assertCatalogAndAssets(page) {
 async function assertAcademicStructure(page) {
   assert.equal(await page.locator("h1").innerText(), "Differential Equations Visualizations");
   assert.equal(await page.locator(".eyebrow").innerText(), "INTERACTIVE COURSE MATERIALS");
-  assert.equal(await page.locator(".card-formula .katex").count(), 2);
+  assert.equal(await page.locator(".card-formula .katex").count(), expectedExplorers.length);
   assert.match(await page.locator(".about-panel").innerText(), /Javier González Monge/);
   assert.equal(await page.locator('meta[name="color-scheme"]').getAttribute("content"), "light");
 }
@@ -157,12 +161,29 @@ async function assertAboutDisclosure(page) {
 }
 
 async function assertResponsiveGrid(page) {
-  for (const [width, expectedColumns] of [[1440, 3], [900, 2], [640, 1], [320, 1]]) {
+  const viewports = [[1440, 3], [1321, 3], [1320, 3], [900, 2], [640, 1], [320, 1]];
+
+  for (const [width, expectedColumns] of viewports) {
     await page.setViewportSize({ width, height: 900 });
     const columns = await page.locator(".explorer-grid").evaluate((node) =>
       getComputedStyle(node).gridTemplateColumns.trim().split(/\s+/).length,
     );
     assert.equal(columns, expectedColumns, `${width}px viewport has the wrong column count.`);
+
+    const fourierFormulaFits = await page
+      .locator('[data-explorer-id="fourier-series-explorer"] .card-formula .katex')
+      .evaluate((node) => {
+        const cardBody = node.closest(".card-body");
+        if (!cardBody) return false;
+        const formulaBounds = node.getBoundingClientRect();
+        const cardBounds = cardBody.getBoundingClientRect();
+        return (
+          formulaBounds.left >= cardBounds.left - 0.5 &&
+          formulaBounds.right <= cardBounds.right + 0.5
+        );
+      });
+    assert.equal(fourierFormulaFits, true, `Fourier formula is clipped at ${width}px.`);
+
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     assert.ok(overflow <= 0, `${width}px viewport overflows horizontally by ${overflow}px.`);
   }

@@ -32,4 +32,15 @@ export const explorers: readonly Explorer[] = [
     preview: "./previews/phase-portrait-explorer.webp",
     accent: "#5846b8",
   },
+  {
+    id: "fourier-series-explorer",
+    title: "Fourier Series",
+    topic: "Periodic functions",
+    formula: String.raw`f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)`,
+    description:
+      "Explore the Fourier series of a periodic function, vary the number of harmonics, and inspect its partial-sum reconstruction.",
+    url: "https://rayleighlord.github.io/FourierSeries/",
+    preview: "./previews/fourier-series-explorer.webp",
+    accent: "#a64b17",
+  },
 ];

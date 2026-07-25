@@ -302,6 +302,10 @@ main,
   font-size: clamp(0.98rem, 1.1vw, 1.1rem);
 }
 
+.explorer-card[data-explorer-id="fourier-series-explorer"] .card-formula .katex {
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+}
+
 .card-body h3 {
   margin: 0.75rem 0 0;
   color: var(--text-strong);
@@ -476,7 +480,7 @@ main,
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1320px) {
   .card-meta {
     display: grid;
   }

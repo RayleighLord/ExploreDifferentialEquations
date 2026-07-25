@@ -2,19 +2,25 @@ import { describe, expect, it } from "vitest";
 
 import { explorers } from "../catalog";
 
-const expectedIds = ["scalar-ode-explorer", "phase-portrait-explorer"];
+const expectedIds = [
+  "scalar-ode-explorer",
+  "phase-portrait-explorer",
+  "fourier-series-explorer",
+];
 
 const expectedUrls = [
   "https://rayleighlord.github.io/ScalarODEsVisualizer/",
   "https://rayleighlord.github.io/PhasePortraitVisualizer/",
+  "https://rayleighlord.github.io/FourierSeries/",
 ];
 
 describe("explorer catalog", () => {
-  it("keeps the approved two-card order", () => {
+  it("keeps the approved three-card order", () => {
     expect(explorers.map(({ id }) => id)).toEqual(expectedIds);
     expect(explorers.map(({ title }) => title)).toEqual([
       "Scalar Differential Equations",
       "Phase Portrait",
+      "Fourier Series",
     ]);
   });
 
@@ -25,6 +31,12 @@ describe("explorer catalog", () => {
   it("shows both planar equations in the phase-portrait formula", () => {
     expect(explorers.find(({ id }) => id === "phase-portrait-explorer")?.formula).toBe(
       String.raw`x'=f(x,y),\quad y'=g(x,y)`,
+    );
+  });
+
+  it("shows the real trigonometric Fourier series", () => {
+    expect(explorers.find(({ id }) => id === "fourier-series-explorer")?.formula).toBe(
+      String.raw`f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)`,
     );
   });
 
