@@ -19,6 +19,10 @@ const expectedExplorers = [
     id: "fourier-series-explorer",
     url: "https://rayleighlord.github.io/FourierSeries/",
   },
+  {
+    id: "heat-equation-explorer",
+    url: "https://rayleighlord.github.io/HeatEquation/",
+  },
 ];
 
 const host = "127.0.0.1";

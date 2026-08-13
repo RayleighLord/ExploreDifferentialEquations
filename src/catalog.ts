@@ -43,4 +43,15 @@ export const explorers: readonly Explorer[] = [
     preview: "./previews/fourier-series-explorer.webp",
     accent: "#a64b17",
   },
+  {
+    id: "heat-equation-explorer",
+    title: "1D Heat Equation",
+    topic: "One-dimensional diffusion",
+    formula: String.raw`u_t=u_{xx}`,
+    description:
+      "Select an initial profile temperature profile on a one-dimensional rod and explore the time evolution of the temperature",
+    url: "https://rayleighlord.github.io/HeatEquation/",
+    preview: "./previews/heat-equation-explorer.webp",
+    accent: "#006f86",
+  },
 ];
