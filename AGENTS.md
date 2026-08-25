@@ -21,7 +21,8 @@ Pages repository subpath.
 - Keep page construction, the About disclosure, and MathML/KaTeX rendering in `src/app.ts`.
 - Keep visual styling and responsive behavior in `src/styles/main.css`.
 - Preserve Vite's relative `base: "./"` so the build works beneath `/ExploreDifferentialEquations/`.
-- Card previews live in `public/previews/` as 960 × 540 WebP files. Keep them local and optimized.
+- Card previews live in `public/previews/` as optimized 960 × 540 WebP files. Keep the
+  visualization itself visually dominant and exclude menus, control panels, and interface chrome.
 - Add future applications through `src/catalog.ts`; the grid will adopt a third desktop column
   automatically when enough cards are present.
 
@@ -33,4 +34,3 @@ Pages repository subpath.
 - Run `npm test` for catalog invariants and `npm run build` for strict TypeScript plus production build.
 - Run `npm run test:browser` for link, image, layout, disclosure, motion, overflow, and browser-error checks.
 - Store temporary browser-review artifacts under `output/playwright/`.
-

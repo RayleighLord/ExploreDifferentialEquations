@@ -44,14 +44,47 @@ export const explorers: readonly Explorer[] = [
     accent: "#a64b17",
   },
   {
+    id: "pde-characteristics-explorer",
+    title: "PDE Characteristics",
+    topic: "First-order quasilinear PDEs",
+    formula: String.raw`a\,u_x+b\,u_y=c`,
+    description:
+      "Trace characteristic curves from Cauchy data and inspect the corresponding solution surface for first-order quasilinear partial differential equations.",
+    url: "https://rayleighlord.github.io/CharacteristicsPDE/",
+    preview: "./previews/pde-characteristics-explorer.webp",
+    accent: "#2369a8",
+  },
+  {
+    id: "wave-equation-explorer",
+    title: "Wave Equation",
+    topic: "One-dimensional wave propagation",
+    formula: String.raw`u_{tt}-u_{xx}=0`,
+    description:
+      "Explore one-dimensional waves on infinite, semi-infinite, and finite domains, including propagation, reflection, and characteristic paths.",
+    url: "https://rayleighlord.github.io/WaveEquation/",
+    preview: "./previews/wave-equation-explorer.webp",
+    accent: "#00776f",
+  },
+  {
     id: "heat-equation-explorer",
-    title: "1D Heat Equation",
+    title: "Heat Equation",
     topic: "One-dimensional diffusion",
     formula: String.raw`u_t=u_{xx}`,
     description:
-      "Select an initial profile temperature profile on a one-dimensional rod and explore the time evolution of the temperature",
+      "Explore how initial temperature profiles evolve under the one-dimensional heat equation.",
     url: "https://rayleighlord.github.io/HeatEquation/",
     preview: "./previews/heat-equation-explorer.webp",
     accent: "#006f86",
+  },
+  {
+    id: "elliptic-problems-explorer",
+    title: "Elliptic Problems",
+    topic: "Poisson and Laplace equations",
+    formula: String.raw`\Delta u=f`,
+    description:
+      "Study separated modal solutions of Poisson and Laplace equations on rectangles, circular sectors, and disks with Dirichlet or Neumann data.",
+    url: "https://rayleighlord.github.io/EllipticProblems/",
+    preview: "./previews/elliptic-problems-explorer.webp",
+    accent: "#a34236",
   },
 ];

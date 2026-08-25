@@ -20,8 +20,20 @@ const expectedExplorers = [
     url: "https://rayleighlord.github.io/FourierSeries/",
   },
   {
+    id: "pde-characteristics-explorer",
+    url: "https://rayleighlord.github.io/CharacteristicsPDE/",
+  },
+  {
+    id: "wave-equation-explorer",
+    url: "https://rayleighlord.github.io/WaveEquation/",
+  },
+  {
     id: "heat-equation-explorer",
     url: "https://rayleighlord.github.io/HeatEquation/",
+  },
+  {
+    id: "elliptic-problems-explorer",
+    url: "https://rayleighlord.github.io/EllipticProblems/",
   },
 ];
 
@@ -80,6 +92,10 @@ try {
 
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  });
   await page.screenshot({
     path: fileURLToPath(new URL("browser-smoke.png", artifactDir)),
     fullPage: true,

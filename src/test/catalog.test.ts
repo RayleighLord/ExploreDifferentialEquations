@@ -6,24 +6,33 @@ const expectedIds = [
   "scalar-ode-explorer",
   "phase-portrait-explorer",
   "fourier-series-explorer",
+  "pde-characteristics-explorer",
+  "wave-equation-explorer",
   "heat-equation-explorer",
+  "elliptic-problems-explorer",
 ];
 
 const expectedUrls = [
   "https://rayleighlord.github.io/ScalarODEsVisualizer/",
   "https://rayleighlord.github.io/PhasePortraitVisualizer/",
   "https://rayleighlord.github.io/FourierSeries/",
+  "https://rayleighlord.github.io/CharacteristicsPDE/",
+  "https://rayleighlord.github.io/WaveEquation/",
   "https://rayleighlord.github.io/HeatEquation/",
+  "https://rayleighlord.github.io/EllipticProblems/",
 ];
 
 describe("explorer catalog", () => {
-  it("keeps the approved four-card order", () => {
+  it("keeps the approved seven-card order", () => {
     expect(explorers.map(({ id }) => id)).toEqual(expectedIds);
     expect(explorers.map(({ title }) => title)).toEqual([
       "Scalar Differential Equations",
       "Phase Portrait",
       "Fourier Series",
-      "1D Heat Equation",
+      "PDE Characteristics",
+      "Wave Equation",
+      "Heat Equation",
+      "Elliptic Problems",
     ]);
   });
 
@@ -46,6 +55,18 @@ describe("explorer catalog", () => {
   it("shows the one-dimensional heat equation", () => {
     expect(explorers.find(({ id }) => id === "heat-equation-explorer")?.formula).toBe(
       String.raw`u_t=u_{xx}`,
+    );
+  });
+
+  it("shows the representative equations for the new PDE explorers", () => {
+    expect(explorers.find(({ id }) => id === "pde-characteristics-explorer")?.formula).toBe(
+      String.raw`a\,u_x+b\,u_y=c`,
+    );
+    expect(explorers.find(({ id }) => id === "wave-equation-explorer")?.formula).toBe(
+      String.raw`u_{tt}-u_{xx}=0`,
+    );
+    expect(explorers.find(({ id }) => id === "elliptic-problems-explorer")?.formula).toBe(
+      String.raw`\Delta u=f`,
     );
   });
 
